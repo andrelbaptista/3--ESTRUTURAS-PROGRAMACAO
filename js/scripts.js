@@ -78,7 +78,7 @@ if (val_1 > val_2) {
   console.warn("Continua errado!");
 } else {
   console.log("Esta tudo certo!");
-}
+};
 
 // estruturas de repetição while e do while, pouco utilizadas
 let i = 0;
@@ -91,17 +91,77 @@ while (i < 10) {
     console.error(`Contando ${i}`);
   }
   i = i + 1;
-}
+};
 
 i = 0;
 while (i < 5) {
-  console.log(`repetindo ${i}`);
+  console.log(`repetindo com while ${i}`);
   i++;
-}
+};
 
 i = 10;
 
 do {
-  console.log(`repetindo ${i}`);
+  console.log(`repetindo com do while ${i}`);
   i--;
 } while (i > 0);
+
+// estrutura de repetição for
+i = 0;
+for (i; i < 10; i++) {
+  console.log(`repetindo com o for ${i}`);
+}
+
+// break e continue
+for (let x = 0; x < 20; x = x + 1) {
+  console.log(`Menor que 15   ${x}`);
+  if (x === 15) {
+    console.log("Chegou a 15, Break !");
+    break;
+  }
+  console.log(`o break vai abandonar o loop for em 15  ${x}`);
+};
+
+for (let x = 1; x < 20; x = x + 1) {
+  // operador resto
+  if (x % 2 === 0) {
+    console.log(`Número PAR !   ${x}`);
+    continue;
+    console.log("continue vai pra próxima instrução");
+  }
+  console.log(x);
+};
+
+// switch
+const profissaoInformada = "Advogado";
+switch (profissaoInformada) {
+  case "Analista":
+    console.log("Você e Analista !");
+    break;
+    case "Jornalista":
+    console.log("Você e Jornalista !");
+    break;
+    case "Advogado":
+    console.log("Você e Advogado !");
+    break;
+    case "Jornalista":
+    console.log("Você e Jornalista !");
+    break;
+    default:
+    console.log("Profissão não encontrada !");
+};
+
+// erro no switch causado por falta do break
+const totalOcupantes = 200;
+switch (totalOcupantes) {
+  case 200:
+    console.log("Total_x é 200 ! FALTOU O `BREAK`");
+    case 100:
+    console.log("Total_x é 100 !");
+    case 50:
+    console.log("Total_x é 50 !");
+    case 10:
+    console.log("Total_x é 10 !");
+    default:
+    console.log("Total_x não foi encontrado");
+};
